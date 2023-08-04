@@ -1,0 +1,48 @@
+.navigation {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: large;
+    color: rgb(239, 236, 230);
+    margin: 0;
+    padding: 0;
+}
+
+.navigation-box {
+    height: 3rem;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.navigation nav {
+    padding: 10px;
+    gap: 3rem;
+}
+
+.navigation ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.navigation li {
+    display: inline;
+    min-width: 8rem;
+    min-height: 1rem;
+}
+
+.navigation a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.navigation a:hover {
+    font-weight: bold;
+    color: rgb(139, 183, 224);
+}
+
+.navigation .active a {
+    color: blue;
+}

@@ -1,0 +1,37 @@
+.contactame-box {
+    text-align: center;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    min-height: 6rem;
+    align-items: center;
+}
+
+.boton-form {
+    padding: 1rem;
+    font-size: large;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: var(--naranja);
+    color: white;
+    border-radius: 1.5rem;
+    min-width: 12rem;
+    min-height: 4rem;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    transition: background-color 0.3s, color 0.3s, font-weight 0.3s, box-shadow 0.3s;
+}
+
+.boton-form:hover {
+    color: black;
+    background-color: var(--celeste-claro);
+    cursor: pointer;
+    font-weight: 900;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    min-width: 13rem;
+    min-height: 4.5rem;
+}
+
+.boton-form:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
