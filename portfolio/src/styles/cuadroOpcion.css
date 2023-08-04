@@ -13,8 +13,6 @@
 
 .section {
     flex: 1;
-    /* padding: 10px; */
-    /* margin: 1rem; */
     height: 20rem;
     display: flex;
     align-items: center;
@@ -25,6 +23,7 @@
     max-width: 20rem;
     min-width: 10rem;
     justify-content: center;
+    overflow: hidden;
 }
 
 .section.frontend {
