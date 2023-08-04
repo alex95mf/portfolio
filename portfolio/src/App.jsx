@@ -6,19 +6,9 @@ import Footer from './components/Footer'
 import 'normalize.css';
 
 function App() {
-  const [pagina, setPagina] = useState({
-    inicio: "inicio",
-    habilidades: "habilidades",
-    proyectos: "proyectos",
-    sobreMi: "sobreMi",
-    contacto: "contacto",
-  })
-
   return (
     <>
-      <Navigation
-        pagina={pagina}>
-      </Navigation>
+      <Navigation></Navigation>
       <Head></Head>
       <Inicio></Inicio>
       <Footer></Footer>

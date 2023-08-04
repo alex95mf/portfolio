@@ -39,10 +39,14 @@
 }
 
 .navigation a:hover {
-    font-weight: bold;
     color: rgb(139, 183, 224);
 }
 
 .navigation .active a {
     color: blue;
+}
+
+.nav-item.active {
+    color: rgb(139, 183, 224);
+    font-weight: bold;
 }
