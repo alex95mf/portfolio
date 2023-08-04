@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Imagen from './Imagen';
 import frontendImage from '../assets/images/frontend.png';
 import backendImage from '../assets/images/backend.png';
-import '../styles/CuadroOpcion.css'
+import '../styles/cuadroOpcion.css'
 
 function CuadroOpcion({
     cuadroSeleccionado,

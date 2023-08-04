@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import '../styles/ModalContactame.css'
+import '../styles/modalContactame.css'
 
 function ModalContactame({ onClose, showModal }) {
     const nombre = "Nombre";

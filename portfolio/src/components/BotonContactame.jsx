@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/BotonContactame.css'
+import '../styles/botonContactame.css'
 
 function BotonContactame({ onClick, onClose }) {
     return (
