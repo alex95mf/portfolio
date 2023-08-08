@@ -1,21 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/navigation.css'
 
-function Navigation() {
-    const pagina = {
-        inicio: 'Inicio',
-        habilidades: 'Habilidades',
-        proyectos: 'Proyectos',
-        sobreMi: 'Sobre mi',
-        contacto: 'Contacto',
-    };
-
-    const [paginaSeleccionada, setPaginaSeleccionada] = useState(pagina.inicio);
-
-    const handlePaginaClick = (nombrePagina) => {
-        setPaginaSeleccionada(nombrePagina);
-    };
-
+function Navigation({ pagina, paginaActual, handlePaginaClick }) {
     return (
         <>
             <div className='navigation-box'>
@@ -24,7 +10,8 @@ function Navigation() {
                         {Object.values(pagina).map((nombrePagina) => (
                             <li key={nombrePagina}>
                                 <a
-                                    className={`nav-item ${paginaSeleccionada === nombrePagina ? 'active' : ''}`}
+                                    className={`nav-item ${paginaActual === nombrePagina
+                                        ? 'active' : ''}`}
                                     onClick={() => handlePaginaClick(nombrePagina)}
                                     href='#'
                                 >

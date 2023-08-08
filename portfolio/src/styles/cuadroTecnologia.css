@@ -1,0 +1,39 @@
+.cuadro-tecnologia-box {
+    text-align: center;
+    margin: 7px;
+}
+
+.cuadro-certificado-box {
+    text-align: center;
+    margin: 7px;
+    max-width: 8rem;
+}
+
+.cuadro-certificado-box:hover {
+    cursor: pointer;
+}
+
+.cuadro-tecnologia-encuadre {
+    border: 1px dotted rgb(192, 190, 190);
+    border-radius: 10px;
+    padding: 8px;
+    background-color: var(--fondo);
+}
+
+.cuadro-certificado-encuadre {
+    border: 1px dotted rgb(192, 190, 190);
+    border-radius: 10px;
+    padding: 8px;
+    background-color: var(--celeste-transparente);
+}
+
+.cuadro-tecnologia-texto {
+    margin-top: 2px;
+    font-size: 15px;
+}
+
+.cuadro-certificado-texto {
+    margin-top: 2px;
+    font-size: 15px;
+    font-weight: bold;
+}

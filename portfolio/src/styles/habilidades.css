@@ -1,0 +1,53 @@
+.habilidades-box {
+    /* height: 80.8vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.habilidades-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.habilidades-titulo-container {
+    width: 100%;
+    text-align: center;
+    /* border-bottom: 1px solid black; */
+}
+
+.habilidades-container h2 {
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 3px;
+}
+
+.habilidades-container img {
+    height: 4.5rem;
+    width: 4.2rem;
+}
+
+.habilidades-tecnologie-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 29rem;
+}
+
+.habilidades-tecnologie-container.certifications {
+    border-top: 1px solid black;
+    padding-top: 16px;
+}
+
+.tecnologies {
+    padding: 1.25rem;
+}
+
+.fila {
+    display: flex;
+    justify-content: center;
+}

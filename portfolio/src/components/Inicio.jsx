@@ -41,11 +41,6 @@ function Inicio() {
         setCuadroDerecho(false);
     };
 
-    // Estilo de símbolos < y >
-    const aperturas = {
-        fontSize: 'xxx-large'
-    };
-
     return (
         <>
             <div className='inicio-box'>

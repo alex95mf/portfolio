@@ -6,7 +6,9 @@
 :root {
   --negro: #000000;
   --celeste: rgb(39, 132, 218);
+  --celeste-transparente: rgba(39, 132, 218, 0.27);
   --celeste-claro: rgb(208, 221, 233);
+  --celeste-oscuro: rgb(25, 85, 140);
   --rojo: #fb075c;
   --verde: #7bf13c;
   --naranja: #e04b4b;
