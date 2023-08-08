@@ -18,6 +18,11 @@
     border-radius: 10px;
     padding: 8px;
     background-color: var(--fondo);
+    opacity: 0.85;
+}
+
+.cuadro-tecnologia-encuadre:hover {
+    opacity: 1;
 }
 
 .cuadro-certificado-encuadre {
@@ -25,6 +30,16 @@
     border-radius: 10px;
     padding: 8px;
     background-color: var(--celeste-transparente);
+    opacity: 0.85;
+    transition: box-shadow 0.3s;
+}
+
+.cuadro-certificado-encuadre:hover {
+    opacity: 1;
+}
+
+.cuadro-certificado-encuadre:active {
+    box-shadow: inset 0px 0px 12px rgba(0, 0, 0, 0.5);
 }
 
 .cuadro-tecnologia-texto {
