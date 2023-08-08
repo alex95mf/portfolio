@@ -1,24 +1,23 @@
 import React, { useState } from 'react'
 import CuadroTecnologia from './CuadroTecnologia';
 import '../styles/habilidades.css'
-import netCore from '../assets/icons/netCore.png';
-import aspnetCore from '../assets/icons/aspnetCore.png';
-import angular from '../assets/icons/angular.png';
-import react from '../assets/icons/react.png';
-import csharp from '../assets/icons/csharp.png';
-import javascript from '../assets/icons/javascript.png';
-import html from '../assets/icons/html.png';
-import css from '../assets/icons/css.png';
-import js from '../assets/icons/js.png';
-import ts from '../assets/icons/ts.png';
-import java from '../assets/icons/java.png';
-import apirest from '../assets/icons/apirest.png';
-import sqlserver from '../assets/icons/sqlserver.png';
-import mysql from '../assets/icons/mysql.png';
-import mongodb from '../assets/icons/mongodb.png';
-import aws from '../assets/icons/aws.png';
-import aspnetmvc from '../assets/icons/aspnetmvc.png';
-import scrum from '../assets/icons/scrum.png';
+import netCore from '../assets/icons/netCore.webp';
+import aspnetCore from '../assets/icons/aspnetCore.webp';
+import angular from '../assets/icons/angular.webp';
+import react from '../assets/icons/react.webp';
+import csharp from '../assets/icons/csharp.webp';
+import html from '../assets/icons/html.webp';
+import css from '../assets/icons/css.webp';
+import js from '../assets/icons/js.webp';
+import ts from '../assets/icons/ts.webp';
+import java from '../assets/icons/java.webp';
+import apirest from '../assets/icons/apirest.webp';
+import sqlserver from '../assets/icons/sqlserver.webp';
+import mysql from '../assets/icons/mysql.webp';
+import mongodb from '../assets/icons/mongodb.webp';
+import aws from '../assets/icons/aws.webp';
+import aspnetmvc from '../assets/icons/aspnetmvc.webp';
+import scrum from '../assets/icons/scrum.webp';
 
 function Habilidades() {
     const titulos = {
