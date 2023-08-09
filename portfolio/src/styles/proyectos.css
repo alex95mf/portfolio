@@ -1,4 +1,16 @@
 .proyectos-box {
-    height: 80.8vh;
+    /* height: 80.8vh; */
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.proyectos-container {
+    margin-bottom: 3rem;
+}
+
+.proyectos-titulo {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

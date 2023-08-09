@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Imagen from './Imagen';
-import frontendImage from '../assets/images/frontend.png';
-import backendImage from '../assets/images/backend.png';
+import frontendImage from '../assets/images/frontend.webp';
+import backendImage from '../assets/images/backend.webp';
 import '../styles/cuadroOpcion.css'
 
 function CuadroOpcion({

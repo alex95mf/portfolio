@@ -10,6 +10,7 @@ import Proyectos from './components/Proyectos';
 import SobreMi from './components/SobreMi';
 import Contacto from './components/Contacto';
 import './App.css';
+import MensajeNotificacion from './components/MensajeNotificacion';
 
 function App() {
   const pagina = {
@@ -22,7 +23,15 @@ function App() {
 
   const [paginaActual, setPaginaActual] = useState(pagina.inicio);
   const [paginaSiguiente, setPaginaSiguiente] = useState(pagina.inicio);
+  const [mensajeError, setMensajeError] = useState('');
   const nodeRef = useRef(null);
+
+  const configurarMensajeError = (mensaje) => {
+    setMensajeError(mensaje)
+    setTimeout(() => {
+      setMensajeError('');
+    }, 4000); // Notificación visible durante 5 segundos
+  }
 
   const handlePaginaClick = (nombrePagina) => {
     setPaginaSiguiente(nombrePagina);
@@ -76,7 +85,8 @@ function App() {
                     ? '-' : ''}100%)` : 'translateX(0)',
               }}
             >
-              {paginaActual === pagina.inicio && <Inicio />}
+              {paginaActual === pagina.inicio &&
+                <Inicio configurarMensajeError={configurarMensajeError} />}
               {paginaActual === pagina.habilidades && <Habilidades />}
               {paginaActual === pagina.proyectos && <Proyectos />}
               {paginaActual === pagina.sobreMi && <SobreMi />}
@@ -86,7 +96,7 @@ function App() {
           }
         </Transition>
       </div>
-
+      {mensajeError.trim() != '' ? <MensajeNotificacion mensaje={mensajeError} /> : null}
       <Footer />
     </>
   )
