@@ -1,3 +1,17 @@
+.main-box {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+}
+
+.general-box {
+  background-color: whitesmoke;
+  width: 90%;
+  max-width: 52rem;
+  margin: 0 auto;
+  box-shadow: 0 0 2px black;
+}
+
 .container-box {
   /* display: flex; */
   background-color: rgba(210, 207, 232, 0.8);

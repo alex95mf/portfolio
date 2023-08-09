@@ -1,4 +1,29 @@
 .contacto-box {
-    height: 80.8vh;
+    /* height: 80.8vh; */
+    background-color: rgb(27, 27, 27);
+    color: whitesmoke;
     display: flex;
+    align-items: center;
+}
+
+.contacto-izquierda {
+    flex: 1;
+    margin: 1.5rem;
+    margin-left: 2.25rem;
+    line-height: 1.4rem;
+}
+
+.contacto-izquierda span {
+    font-weight: bold;
+}
+
+.contacto-titulo {
+    margin-bottom: 1.5rem;
+}
+
+.contacto-derecha {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }

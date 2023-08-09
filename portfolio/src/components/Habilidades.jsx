@@ -18,6 +18,9 @@ import mongodb from '../assets/icons/mongodb.webp';
 import aws from '../assets/icons/aws.webp';
 import aspnetmvc from '../assets/icons/aspnetmvc.webp';
 import scrum from '../assets/icons/scrum.webp';
+import fotoPerfil from '../assets/images/fotoperfil.webp';
+import pdfCVESP from '../assets/documents/cvesp.pdf';
+import pdfCVENG from '../assets/documents/cveng.pdf';
 
 function Habilidades() {
     const titulos = {
@@ -26,6 +29,28 @@ function Habilidades() {
         database: "bases de datos",
         certifications: "certificaciones"
     }
+
+    const nombreCVESP = 'Curriculum Vitae Alexander Martinez'
+
+    const textoDescargarCV = 'Curriculum Vitae'
+
+    const textoSobreMi = `Ingeniero en Telemática con más de
+    3 años de experiencia en el
+    desarrollo de software basado en
+    web. He trabajado en la industria
+    gubernamental, farmacéutica y de
+    transporte, desarrollando soluciones
+    de software tanto en el frontend
+    como en el backend, además de
+    gestionar bases de datos para
+    diferentes áreas de la empresa.
+    Tengo un sólido nivel de inglés y
+    experiencia laboral en Estados
+    Unidos durante más de 16 meses,
+    además de haber realizado cursos y
+    obtenido certificaciones
+    profesionales adicionales en
+    diversas instituciones.`
 
     const tecnologias = {
         frontend: [
@@ -195,10 +220,25 @@ function Habilidades() {
         return filas;
     }
 
+    const descargarCV = () => {
+        const link = document.createElement('a');
+        link.href = pdfCVESP;
+        link.download = `${nombreCVESP}.pdf`;
+        link.target = '_blank';
+        link.click();
+    }
+
     return (
         <>
             <div className={`habilidades-box`}>
                 <div className='habilidades-container'>
+                    <div className='habilidades-sobremi-container'>
+                        <div className='habilidades-perfil-container'>
+                            <img className='habilidades-fotoperfil' src={fotoPerfil} alt={'Foto perfil emprendedor'} />
+                            <button onClick={descargarCV} title='Descargar Curriculum Vitae' className='habilidades-botondescarga'>{textoDescargarCV}</button>
+                        </div>
+                        <p className='habilidades-textoperfil'>{textoSobreMi}</p>
+                    </div>
                     <div className='habilidades-tecnologie-container'>
                         <div className='habilidades-titulo-container'>
                             <h2>{titulos.frontend.toUpperCase()}</h2>

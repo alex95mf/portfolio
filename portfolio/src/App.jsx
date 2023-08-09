@@ -16,15 +16,24 @@ function App() {
   const pagina = {
     inicio: 'Inicio',
     habilidades: 'Habilidades',
-    proyectos: 'Proyectos',
-    sobreMi: 'Sobre mi',
-    contacto: 'Contacto',
+    proyectos: 'Proyectos'
   };
 
   const [paginaActual, setPaginaActual] = useState(pagina.inicio);
   const [paginaSiguiente, setPaginaSiguiente] = useState(pagina.inicio);
   const [mensajeError, setMensajeError] = useState('');
+  const [showModal, setShowModal] = useState(false);
   const nodeRef = useRef(null);
+
+  // Abrir el modal
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  // Cerrar el modal
+  const closeModal = () => {
+    setShowModal(false);
+  };
 
   const configurarMensajeError = (mensaje) => {
     setMensajeError(mensaje)
@@ -59,45 +68,58 @@ function App() {
 
   return (
     <>
-      <Navigation
-        pagina={pagina}
-        paginaActual={paginaActual}
-        handlePaginaClick={handlePaginaClick}
-      />
-      <Head />
+      <div className='main-box'>
+        <Navigation
+          pagina={pagina}
+          paginaActual={paginaActual}
+          handlePaginaClick={handlePaginaClick}
+        />
+        <Head />
 
-      <div className='container-box'>
-        <Transition
-          in={paginaSiguiente !== null}
-          timeout={3000}
-          nodeRef={nodeRef}
-          unmountOnExit
-          onTransitionEnd={handlePaginaTransitionEnd}
-        >
-          {(state) => (
+        <div className='container-box'>
+          <Transition
+            in={paginaSiguiente !== null}
+            timeout={3000}
+            nodeRef={nodeRef}
+            unmountOnExit
+            onTransitionEnd={handlePaginaTransitionEnd}
+          >
+            {(state) => (
 
-            <div
-              ref={nodeRef}
-              style={{
-                transition: 'transform 3000ms ease',
-                transform: state === 'exited' ?
-                  `translateX(${getTransitionDirection(paginaActual, paginaSiguiente) === 'right'
-                    ? '-' : ''}100%)` : 'translateX(0)',
-              }}
-            >
-              {paginaActual === pagina.inicio &&
-                <Inicio configurarMensajeError={configurarMensajeError} />}
-              {paginaActual === pagina.habilidades && <Habilidades />}
-              {paginaActual === pagina.proyectos && <Proyectos />}
-              {paginaActual === pagina.sobreMi && <SobreMi />}
-              {paginaActual === pagina.contacto && <Contacto />}
-            </div>
-          )
-          }
-        </Transition>
+              <div
+                ref={nodeRef}
+                style={{
+                  transition: 'transform 3000ms ease',
+                  transform: state === 'exited' ?
+                    `translateX(${getTransitionDirection(paginaActual, paginaSiguiente) === 'right'
+                      ? '-' : ''}100%)` : 'translateX(0)',
+                }}
+              >
+                {paginaActual === pagina.inicio &&
+                  <Inicio
+                    openModal={openModal}
+                    closeModal={closeModal}
+                    showModal={showModal}
+                    configurarMensajeError={configurarMensajeError}
+                  />}
+                {paginaActual === pagina.habilidades && <Habilidades />}
+                {paginaActual === pagina.proyectos && <Proyectos />}
+                {paginaActual === pagina.sobreMi && <SobreMi />}
+                {paginaActual === pagina.contacto && <Contacto />}
+              </div>
+            )
+            }
+          </Transition>
+        </div>
+        {mensajeError.trim() != '' ? <MensajeNotificacion mensaje={mensajeError} /> : null}
+        <Contacto
+          openModal={openModal}
+          closeModal={closeModal}
+          showModal={showModal}
+          configurarMensajeError={configurarMensajeError}
+        />
+        <Footer />
       </div>
-      {mensajeError.trim() != '' ? <MensajeNotificacion mensaje={mensajeError} /> : null}
-      <Footer />
     </>
   )
 }

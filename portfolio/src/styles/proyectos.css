@@ -4,6 +4,12 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    /*Pruebas*/
+    background-color: whitesmoke;
+    width: 90%;
+    max-width: 56rem;
+    margin: 0 auto;
+    box-shadow: 0 0 2px black;
 }
 
 .proyectos-container {

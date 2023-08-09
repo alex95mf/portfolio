@@ -3,6 +3,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    /*Pruebas*/
+    background-color: whitesmoke;
+    width: 90%;
+    max-width: 56rem;
+    margin: 0 auto;
+    box-shadow: 0 0 2px black;
 }
 
 .habilidades-container {
@@ -12,6 +18,56 @@
     align-items: center;
     margin: 0 auto;
     padding: 2rem 0;
+}
+
+.habilidades-sobremi-container {
+    display: flex;
+    width: 80%;
+    max-width: 56rem;
+    gap: 2rem;
+    height: 12rem;
+    align-items: center;
+    text-align: justify;
+    justify-content: space-between;
+}
+
+.habilidades-perfil-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.habilidades-fotoperfil {
+    width: 9rem !important;
+    height: 10rem !important;
+}
+
+.habilidades-botondescarga {
+    background-color: var(--celeste-transparente);
+    padding: 0.6rem 0.7rem;
+    border: 1px solid rgb(109, 108, 108);
+    border-radius: 0.5rem;
+    opacity: 0.85;
+    transition: box-shadow 0.3s ease;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.habilidades-botondescarga:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.habilidades-botondescarga:active {
+    box-shadow: inset 0px 0px 6px rgba(0, 0, 0, 0.5);
+}
+
+.habilidades-textoperfil {
+    font-size: 15px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .habilidades-titulo-container {

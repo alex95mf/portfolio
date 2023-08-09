@@ -1,10 +1,10 @@
 .contactame-box {
     text-align: center;
-    margin-top: 1rem;
     display: flex;
     justify-content: center;
     min-height: 6rem;
     align-items: center;
+    max-width: 5rem;
 }
 
 .boton-form {
@@ -22,6 +22,24 @@
     transition: background-color 0.3s, color 0.3s, font-weight 0.3s, box-shadow 0.3s;
 }
 
+.boton-form.wpp {
+    background-color: green;
+    border: 1px solid white;
+    text-transform: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.25rem;
+}
+
+.boton-form.wpp p {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .boton-form:hover {
     color: black;
     background-color: var(--celeste-claro);
@@ -34,4 +52,9 @@
 
 .boton-form:active {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contactame-imagenwpp {
+    width: 2.5rem;
+    margin-top: -0.1rem;
 }

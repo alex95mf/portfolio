@@ -4,21 +4,21 @@ import BotonContactame from './BotonContactame';
 import ModalContactame from './ModalContactame';
 import CuadroOpcion from './CuadroOpcion';
 
-function Inicio({ configurarMensajeError }) {
+function Inicio({ configurarMensajeError, openModal, closeModal, showModal }) {
     // Variables de cuadros de opciones (Frontend y Backend)
     const [cuadroIzquierdo, setCuadroIzquierdo] = useState(false);
     const [cuadroDerecho, setCuadroDerecho] = useState(false);
-    const [showModal, setShowModal] = useState(false);
+    // const [showModal, setShowModal] = useState(false);
 
-    // Abrir el modal
-    const openModal = () => {
-        setShowModal(true);
-    };
+    // // Abrir el modal
+    // const openModal = () => {
+    //     setShowModal(true);
+    // };
 
-    // Cerrar el modal
-    const closeModal = () => {
-        setShowModal(false);
-    };
+    // // Cerrar el modal
+    // const closeModal = () => {
+    //     setShowModal(false);
+    // };
 
     // Activa y desactiva variable para resaltar la opcion (cuadro) donde esta el mouse
     const resaltarCuadroIzquierdo = (e) => {
@@ -66,12 +66,12 @@ function Inicio({ configurarMensajeError }) {
                         confiables, y garantizan el funcionamiento óptimo y seguro del sistema.`}>
                     </CuadroOpcion>
                 </div>
-                <BotonContactame onClick={openModal} />
+                {/* <BotonContactame onClick={openModal} />
                 <ModalContactame
                     onClose={closeModal}
                     showModal={showModal}
                     configurarMensajeError={configurarMensajeError}
-                />
+                /> */}
             </div >
         </>
     )
