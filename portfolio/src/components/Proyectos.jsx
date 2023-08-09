@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import '../styles/proyectos.css'
 import CuadroProyecto from './CuadroProyecto'
-import proyectoVeterinaria from '../assets/images/seguimientoVeterinaria.webp'
+import proyectoVeterinaria from '../assets/images/seguimientoveterinaria.webp'
 import proyectobudgetMG from '../assets/images/budgetmg.webp'
 import proyectoCriptoSearch from '../assets/images/criptosearch.webp'
 import proyectoMethodicCalculator from '../assets/images/methodiccalculator.webp'
