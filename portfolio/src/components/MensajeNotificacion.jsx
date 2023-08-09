@@ -1,5 +1,5 @@
 import React from 'react'
-import '../styles/MensajeNotificacion.css'
+import '../styles/mensajeNotificacion.css'
 
 function MensajeNotificacion({ mensaje }) {
     return (
