@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: center;
     /*Pruebas*/
-    background-color: whitesmoke;
+    background-color: rgb(245, 245, 245);
     width: 90%;
     max-width: 56rem;
     margin: 0 auto;
@@ -42,6 +42,8 @@
 .habilidades-fotoperfil {
     width: 9rem !important;
     height: 10rem !important;
+    border-radius: 0.3rem;
+    border: 1px solid rgb(183, 182, 182);
 }
 
 .habilidades-botondescarga {
@@ -54,6 +56,16 @@
     font-size: 12px;
     font-weight: bold;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 10em;
+    gap: 0.5rem;
+}
+
+.habilidades-iconodescargacv {
+    width: 1rem !important;
+    height: 1rem !important;
 }
 
 .habilidades-botondescarga:hover {

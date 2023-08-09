@@ -4,7 +4,7 @@ import imagenWpp from '../assets/images/wpp.webp';
 
 function BotonContactame({ onClick, onClose, esWpp }) {
     const textoBoton = {
-        email: 'Contáctame',
+        email: 'Contactar',
         wpp: 'WhatsApp'
     }
     return (

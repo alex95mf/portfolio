@@ -21,6 +21,7 @@ import scrum from '../assets/icons/scrum.webp';
 import fotoPerfil from '../assets/images/fotoperfil.webp';
 import pdfCVESP from '../assets/documents/cvesp.pdf';
 import pdfCVENG from '../assets/documents/cveng.pdf';
+import iconoDescargarCV from '../assets/icons/descargaA.webp'
 
 function Habilidades() {
     const titulos = {
@@ -32,7 +33,7 @@ function Habilidades() {
 
     const nombreCVESP = 'Curriculum Vitae Alexander Martinez'
 
-    const textoDescargarCV = 'Curriculum Vitae'
+    const textoDescargarCV = 'Curriculum'
 
     const textoSobreMi = `Ingeniero en Telemática con más de
     3 años de experiencia en el
@@ -235,7 +236,12 @@ function Habilidades() {
                     <div className='habilidades-sobremi-container'>
                         <div className='habilidades-perfil-container'>
                             <img className='habilidades-fotoperfil' src={fotoPerfil} alt={'Foto perfil emprendedor'} />
-                            <button onClick={descargarCV} title='Descargar Curriculum Vitae' className='habilidades-botondescarga'>{textoDescargarCV}</button>
+                            <button
+                                onClick={descargarCV} title='Descargar Curriculum Vitae'
+                                className='habilidades-botondescarga'>
+                                <p> {textoDescargarCV}</p>
+                                <img className='habilidades-iconodescargacv' src={iconoDescargarCV} alt='Icono Descargar DV' />
+                            </button>
                         </div>
                         <p className='habilidades-textoperfil'>{textoSobreMi}</p>
                     </div>

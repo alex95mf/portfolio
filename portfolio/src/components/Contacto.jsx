@@ -9,7 +9,7 @@ function Contacto({ openModal, closeModal, showModal, configurarMensajeError }) 
     const telefono = '+593 993414364'
     const telefonoLink = '+593993414364'
     const email = 'alex95mf@gmail.com'
-    const mensaje = 'Holats!'
+    const mensaje = ``
 
     const openWpp = () => {
         const url = `https://wa.me/${telefonoLink}?text=${encodeURIComponent(mensaje)}`;

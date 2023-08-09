@@ -7,6 +7,7 @@ import pdfsqlserver from '../assets/documents/sqlserverENG.pdf';
 import pdfawsfundamentals from '../assets/documents/awsfundamentals.pdf';
 import pdfrelationaldatabase from '../assets/documents/relationaldatabase.pdf';
 import pdfscrum from '../assets/documents/scrum.pdf';
+import iconoDescargarCV from '../assets/icons/descargaB.webp'
 
 function CuadroTecnologia({ icono, alt, cantidad, esCertificado, nombre }) {
     let clase = "tecnologia";
@@ -69,6 +70,7 @@ function CuadroTecnologia({ icono, alt, cantidad, esCertificado, nombre }) {
             <div>
                 <div className={`cuadro-${clase}-encuadre`}>
                     <img src={icono} alt={alt} loading='lazy' />
+                    {esCertificado && <img className='cuadro-descarga' src={iconoDescargarCV} alt='Icono descargar certificado' />}
                 </div>
                 <div className={`cuadro-${clase}-texto`}>
                     <p>{`${esCertificado ? alt : cantidad > 1 ? cantidad + ' años' : cantidad + ' año'}`}</p>
