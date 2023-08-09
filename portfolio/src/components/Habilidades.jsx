@@ -18,6 +18,7 @@ import mongodb from '../assets/icons/mongodb.webp';
 import aws from '../assets/icons/aws.webp';
 import aspnetmvc from '../assets/icons/aspnetmvc.webp';
 import scrum from '../assets/icons/scrum.webp';
+import nodejs from '../assets/icons/nodejs.webp'
 import fotoPerfil from '../assets/images/fotoperfil.webp';
 import pdfCVESP from '../assets/documents/cvesp.pdf';
 import pdfCVENG from '../assets/documents/cveng.pdf';
@@ -117,10 +118,15 @@ function Habilidades() {
                 cantidad: 2
             },
             {
-                icono: apirest,
-                alt: "API Rest | Infraestructura de microservicios",
+                icono: nodejs,
+                alt: "NodeJS",
                 cantidad: 2
             },
+            // {
+            //     icono: apirest,
+            //     alt: "API Rest | Infraestructura de microservicios",
+            //     cantidad: 2
+            // },
             {
                 icono: java,
                 alt: "Java",
