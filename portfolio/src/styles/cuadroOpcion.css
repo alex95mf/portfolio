@@ -90,6 +90,7 @@
     opacity: 0;
     height: 0;
     visibility: hidden;
+    margin: 0 3rem;
     transition: padding 0.3s ease, opacity 0.4s ease, height 0.5s ease;
 }
 
