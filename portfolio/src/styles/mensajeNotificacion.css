@@ -15,6 +15,10 @@
     animation: fadeIn 0.3s ease forwards, fadeOut 0.3s ease forwards 3.7s;
 }
 
+.notificacion-box.esok {
+    background-color: green;
+}
+
 .notificacion-box p {
     /* font-weight: 700; */
     font-size: small;

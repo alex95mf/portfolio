@@ -4,7 +4,7 @@ import '../styles/modalContactame.css'
 import BotonContactame from './BotonContactame';
 import ModalContactame from './ModalContactame';
 
-function Contacto({ openModal, closeModal, showModal, configurarMensajeError }) {
+function Contacto({ openModal, closeModal, showModal, configurarMensajeNotificacion, mensajeNotificacion }) {
     const titulo = 'Información de contacto'
     const telefono = '+593 993414364'
     const telefonoLink = '+593993414364'
@@ -30,7 +30,8 @@ function Contacto({ openModal, closeModal, showModal, configurarMensajeError }) 
                         <ModalContactame
                             onClose={closeModal}
                             showModal={showModal}
-                            configurarMensajeError={configurarMensajeError}
+                            configurarMensajeNotificacion={configurarMensajeNotificacion}
+                            mensajeNotificacion={mensajeNotificacion}
                         />
                     </div>
                     <div>

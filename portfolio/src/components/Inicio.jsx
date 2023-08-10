@@ -4,7 +4,7 @@ import BotonContactame from './BotonContactame';
 import ModalContactame from './ModalContactame';
 import CuadroOpcion from './CuadroOpcion';
 
-function Inicio({ configurarMensajeError, openModal, closeModal, showModal }) {
+function Inicio({ configurarMensajeNotificacion, openModal, closeModal, showModal }) {
     // Variables de cuadros de opciones (Frontend y Backend)
     const [cuadroIzquierdo, setCuadroIzquierdo] = useState(false);
     const [cuadroDerecho, setCuadroDerecho] = useState(false);
@@ -70,7 +70,7 @@ function Inicio({ configurarMensajeError, openModal, closeModal, showModal }) {
                 <ModalContactame
                     onClose={closeModal}
                     showModal={showModal}
-                    configurarMensajeError={configurarMensajeError}
+                    configurarMensajeNotificacion={configurarMensajeNotificacion}
                 /> */}
             </div >
         </>

@@ -21,9 +21,10 @@ function App() {
 
   const [paginaActual, setPaginaActual] = useState(pagina.inicio);
   const [paginaSiguiente, setPaginaSiguiente] = useState(pagina.inicio);
-  const [mensajeError, setMensajeError] = useState('');
+  const [mensajeNotificacion, setMensajeNotificacion] = useState('');
   const [showModal, setShowModal] = useState(false);
   const nodeRef = useRef(null);
+  const [temporizadorNotificacion, setTemporizadorNotificacion] = useState(null);
 
   // Abrir el modal
   const openModal = () => {
@@ -35,11 +36,22 @@ function App() {
     setShowModal(false);
   };
 
-  const configurarMensajeError = (mensaje) => {
-    setMensajeError(mensaje)
-    setTimeout(() => {
-      setMensajeError('');
-    }, 4000); // Notificación visible durante 5 segundos
+  const configurarMensajeNotificacion = (mensaje) => {
+    // Limpiar temporizador existente, si hay uno
+    if (temporizadorNotificacion) {
+      clearTimeout(temporizadorNotificacion);
+    }
+
+    setMensajeNotificacion(mensaje)
+
+    // Configurar un nuevo temporizador
+    const nuevoTemporizador = setTimeout(() => {
+      // console.log('Temporizador iniciado')
+      setMensajeNotificacion('');
+    }, 4000);
+
+    // Almacenar el ID del nuevo temporizador en el estado
+    setTemporizadorNotificacion(nuevoTemporizador);
   }
 
   const handlePaginaClick = (nombrePagina) => {
@@ -100,7 +112,7 @@ function App() {
                     openModal={openModal}
                     closeModal={closeModal}
                     showModal={showModal}
-                    configurarMensajeError={configurarMensajeError}
+                    configurarMensajeNotificacion={configurarMensajeNotificacion}
                   />}
                 {paginaActual === pagina.habilidades && <Habilidades />}
                 {paginaActual === pagina.proyectos && <Proyectos />}
@@ -111,12 +123,17 @@ function App() {
             }
           </Transition>
         </div>
-        {mensajeError.trim() != '' ? <MensajeNotificacion mensaje={mensajeError} /> : null}
+        {mensajeNotificacion.trim() != '' ?
+          <MensajeNotificacion
+            esOk={mensajeNotificacion[0] == 'F' ? true : false}
+            mensaje={mensajeNotificacion}
+          /> : null}
         <Contacto
           openModal={openModal}
           closeModal={closeModal}
           showModal={showModal}
-          configurarMensajeError={configurarMensajeError}
+          configurarMensajeNotificacion={configurarMensajeNotificacion}
+          mensajeNotificacion={mensajeNotificacion}
         />
         <Footer />
       </div>

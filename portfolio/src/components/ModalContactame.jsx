@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import '../styles/modalContactame.css'
+import MensajeNotificacion from './MensajeNotificacion';
 
-function ModalContactame({ onClose, showModal, configurarMensajeError }) {
+function ModalContactame({ onClose, showModal, configurarMensajeNotificacion, mensajeNotificacion }) {
     const nombre = "*Nombre";
     const empresa = "*Empresa";
     const email = "*E-mail";
@@ -9,11 +10,21 @@ function ModalContactame({ onClose, showModal, configurarMensajeError }) {
     const mensaje = "*Mensaje";
     const tituloModal = "Información de contacto";
 
+    const urlApi = '/enviar-correo'
+    const urlBackendDev = 'http://localhost:3500'
+    const urlBackendProd = ''
+
     const [inputNombre, setInputNombre] = useState('');
     const [inputEmpresa, setInputEmpresa] = useState('');
     const [inputEmail, setInputEmail] = useState('');
     const [inputTelefono, setInputTelefono] = useState('');
     const [inputMensaje, setInputMensaje] = useState('');
+
+    const inputNombreRef = useRef(null);
+    const inputEmpresaRef = useRef(null);
+    const inputEmailRef = useRef(null);
+    const inputTelefonoRef = useRef(null);
+    const inputMensajeRef = useRef(null);
 
     const formulario = {
         nombre: null,
@@ -54,6 +65,19 @@ function ModalContactame({ onClose, showModal, configurarMensajeError }) {
         return phoneNumberPattern.test(inputTelefono)
     }
 
+    const limpiarModal = () => {
+        setInputNombre('')
+        setInputEmpresa('')
+        setInputEmail('')
+        setInputTelefono('')
+        setInputMensaje('')
+        inputNombreRef.current.value = '';
+        inputEmpresaRef.current.value = '';
+        inputEmailRef.current.value = '';
+        inputTelefonoRef.current.value = '';
+        inputMensajeRef.current.value = '';
+    }
+
     const validarForm = () => {
         if (inputNombre.trim() == '') {
             return 1
@@ -77,7 +101,7 @@ function ModalContactame({ onClose, showModal, configurarMensajeError }) {
     }
 
     // Enviar datos a email
-    const enviarForm = () => {
+    const enviarForm = async () => {
         const esValido = validarForm()
         if (esValido == 0) {
             formulario.nombre = inputNombre;
@@ -85,14 +109,35 @@ function ModalContactame({ onClose, showModal, configurarMensajeError }) {
             formulario.email = inputEmail;
             formulario.telefono = inputTelefono;
             formulario.mensaje = inputMensaje;
-            console.log(formulario)
-            console.log('Enviando Formulario')
+            try {
+                const respuesta = await fetch(urlBackendDev + urlApi, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(formulario)
+                })
+                if (respuesta.ok) {
+                    configurarMensajeNotificacion('Formulario enviado exitosamente');
+                    setTimeout(() => {
+                        onClose();
+                    }, 500)
+                    setTimeout(() => {
+                        limpiarModal();
+                    }, 500)
+                } else {
+                    configurarMensajeNotificacion('Error al enviar el formulario');
+                }
+            } catch (error) {
+                configurarMensajeNotificacion(`Error en la solicitud: ${error}`);
+            }
+
         } else if (esValido == 1) {
-            configurarMensajeError('Debe llenar todos los campos obligatorios')
+            configurarMensajeNotificacion('Debe llenar todos los campos obligatorios')
         } else if (esValido == 2) {
-            configurarMensajeError('Debe ingresar un email válido')
+            configurarMensajeNotificacion('Debe ingresar un email válido')
         } else if (esValido == 3) {
-            configurarMensajeError('Debe ingresar un número de teléfono válido')
+            configurarMensajeNotificacion('Debe ingresar un número de teléfono válido')
         }
     };
 
@@ -113,25 +158,25 @@ function ModalContactame({ onClose, showModal, configurarMensajeError }) {
                     </div>
                     <div className='modal-body'>
                         <div className='input-container'>
-                            <input type='text' onChange={llenarNombre} />
+                            <input ref={inputNombreRef} type='text' onChange={llenarNombre} />
                             <label className='input-label'>{nombre}</label>
                         </div>
                         <div className='input-container'>
-                            <input type='text' onChange={llenarEmpresa} />
+                            <input ref={inputEmpresaRef} type='text' onChange={llenarEmpresa} />
                             <label className='input-label'>{empresa}</label>
                         </div>
                         <div className='input-section'>
                             <div className='input-container-section'>
-                                <input type='email' onChange={llenarEmail} />
+                                <input ref={inputEmailRef} type='email' onChange={llenarEmail} />
                                 <label className='input-label'>{email}</label>
                             </div>
                             <div className='input-container-section'>
-                                <input type='tel' onChange={llenarTelefono} />
+                                <input ref={inputTelefonoRef} type='tel' onChange={llenarTelefono} />
                                 <label className='input-label'>{telefono}</label>
                             </div>
                         </div>
                         <div className='textarea-container'>
-                            <textarea rows={6} cols={32} onChange={llenarMensaje}></textarea>
+                            <textarea ref={inputMensajeRef} rows={6} cols={32} onChange={llenarMensaje}></textarea>
                             <label className='input-label'>{mensaje}</label>
                         </div>
                     </div>
