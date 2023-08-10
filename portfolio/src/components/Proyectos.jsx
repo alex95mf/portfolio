@@ -10,7 +10,7 @@ import proyectoTaskApp from '../assets/images/taskapp.webp'
 import proyectoCoolStore from '../assets/images/coolstore.webp'
 import proyectoBlogEnCafe from '../assets/images/blogencafe.webp'
 
-function Proyectos() {
+function Proyectos({ appearingDirection }) {
     const react = 'React';
     const tailwindCss = 'TailwindCSS'
     const html = 'Html'
@@ -125,7 +125,7 @@ function Proyectos() {
 
     return (
         <>
-            <div className='proyectos-box'>
+            <div className={`proyectos-box ${appearingDirection}`}>
                 <div className='proyectos-container'>
                     {/* <h1 className='proyectos-titulo'>{titulo.toUpperCase()}</h1> */}
                     {renderProyectos()}

@@ -24,7 +24,7 @@ import pdfCVESP from '../assets/documents/cvesp.pdf';
 import pdfCVENG from '../assets/documents/cveng.pdf';
 import iconoDescargarCV from '../assets/icons/descargaA.webp'
 
-function Habilidades() {
+function Habilidades({ appearingDirection }) {
     const titulos = {
         frontend: "frontend",
         backend: "backend",
@@ -36,7 +36,7 @@ function Habilidades() {
 
     const textoDescargarCV = 'Curriculum'
 
-    const textoSobreMi = `Ingeniero en Telemática con más de
+    const textoSobreMi = `Desarrollador web Fullstack con más de
     3 años de experiencia en el
     desarrollo de software basado en
     web. He trabajado en la industria
@@ -152,7 +152,7 @@ function Habilidades() {
             {
                 icono: aws,
                 nombre: "awsfundamentals",
-                alt: "AWS Cloud Fundamentals",
+                alt: "AWS Cloud",
                 cantidad: 2023,
                 esCertificado: true
             },
@@ -180,7 +180,7 @@ function Habilidades() {
             {
                 icono: sqlserver,
                 nombre: "sqlserver",
-                alt: "Master en SQL Server",
+                alt: "SQL Server Profesional",
                 cantidad: 2022,
                 esCertificado: true
             },
@@ -194,7 +194,7 @@ function Habilidades() {
             {
                 icono: scrum,
                 nombre: "scrum",
-                alt: "SCRUM Developer & SDPC",
+                alt: "SCRUM Developer",
                 cantidad: 2022,
                 esCertificado: true
             }
@@ -237,7 +237,7 @@ function Habilidades() {
 
     return (
         <>
-            <div className={`habilidades-box`}>
+            <div className={`habilidades-box ${appearingDirection}`}>
                 <div className='habilidades-container'>
                     <div className='habilidades-sobremi-container'>
                         <div className='habilidades-perfil-container'>
@@ -245,7 +245,7 @@ function Habilidades() {
                             <button
                                 onClick={descargarCV} title='Descargar Curriculum Vitae'
                                 className='habilidades-botondescarga'>
-                                <p> {textoDescargarCV}</p>
+                                <p className='habilidades-textodescargacv'> {textoDescargarCV}</p>
                                 <img className='habilidades-iconodescargacv' src={iconoDescargarCV} alt='Icono Descargar DV' />
                             </button>
                         </div>

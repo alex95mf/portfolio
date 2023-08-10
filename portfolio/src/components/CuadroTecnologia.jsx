@@ -69,7 +69,7 @@ function CuadroTecnologia({ icono, alt, cantidad, esCertificado, nombre }) {
         <div title={alt} className={`cuadro-${clase}-box`} onClick={() => descargarCertificado(nombre)}>
             <div>
                 <div className={`cuadro-${clase}-encuadre`}>
-                    <img src={icono} alt={alt} loading='lazy' />
+                    <img src={icono} alt={alt} rel='preload' />
                     {esCertificado && <img className='cuadro-descarga' src={iconoDescargarCV} alt='Icono descargar certificado' />}
                 </div>
                 <div className={`cuadro-${clase}-texto`}>

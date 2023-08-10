@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { Transition } from 'react-transition-group';
+// import 'react-transition-group/dist/react-transition-group.css';
 import 'normalize.css';
 import Head from './components/Head'
 import Navigation from './components/Navigation'
@@ -25,6 +26,7 @@ function App() {
   const [showModal, setShowModal] = useState(false);
   const nodeRef = useRef(null);
   const [temporizadorNotificacion, setTemporizadorNotificacion] = useState(null);
+  const [direction, setDirection] = useState(null);
 
   // Abrir el modal
   const openModal = () => {
@@ -56,18 +58,19 @@ function App() {
 
   const handlePaginaClick = (nombrePagina) => {
     setPaginaSiguiente(nombrePagina);
-    setPaginaActual(nombrePagina);
   };
 
   const getTransitionDirection = (paginaActual, paginaSiguiente) => {
-    const paginas = ['inicio', 'habilidades', 'proyectos', 'sobreMi', 'contacto'];
+    const paginas = ['Inicio', 'Habilidades', 'Proyectos'];
     const posicionActual = paginas.indexOf(paginaActual);
     const posicionSiguiente = paginas.indexOf(paginaSiguiente);
 
     if (posicionSiguiente > posicionActual) {
       return 'right';
-    } else {
+    } else if (posicionSiguiente < posicionActual) {
       return 'left';
+    } else {
+      return 'base'
     }
   };
 
@@ -77,6 +80,11 @@ function App() {
       setPaginaSiguiente(null);
     }
   };
+
+  useEffect(() => {
+    setDirection(getTransitionDirection(paginaActual, paginaSiguiente))
+    setPaginaActual(paginaSiguiente)
+  }, [paginaSiguiente])
 
   return (
     <>
@@ -88,7 +96,7 @@ function App() {
         />
         <Head />
 
-        <div className='container-box'>
+        <div className='container-box' ref={nodeRef}>
           <Transition
             in={paginaSiguiente !== null}
             timeout={3000}
@@ -109,15 +117,20 @@ function App() {
               >
                 {paginaActual === pagina.inicio &&
                   <Inicio
-                    openModal={openModal}
-                    closeModal={closeModal}
-                    showModal={showModal}
-                    configurarMensajeNotificacion={configurarMensajeNotificacion}
+                    appearingDirection={direction}
                   />}
-                {paginaActual === pagina.habilidades && <Habilidades />}
-                {paginaActual === pagina.proyectos && <Proyectos />}
-                {paginaActual === pagina.sobreMi && <SobreMi />}
-                {paginaActual === pagina.contacto && <Contacto />}
+                {paginaActual === pagina.habilidades &&
+                  <Habilidades
+                    appearingDirection={direction}
+                  />}
+                {paginaActual === pagina.proyectos &&
+                  <Proyectos
+                    appearingDirection={direction}
+                  />}
+                {paginaActual === pagina.sobreMi &&
+                  <SobreMi />}
+                {paginaActual === pagina.contacto &&
+                  <Contacto />}
               </div>
             )
             }

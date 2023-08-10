@@ -15,6 +15,9 @@
   --fondo: rgb(230, 229, 237);
   --fondo-claro: rgb(241, 239, 248);
   --fondo-muy-claro: rgb(234, 232, 249);
+  --font_0: 'Montserrat', sans-serif;
+  --font_1: 'Roboto Mono', monospace;
+  --font_2: 'Source Code Pro', monospace;
 }
 
 .m-r {

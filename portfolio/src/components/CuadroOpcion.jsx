@@ -35,7 +35,9 @@ function CuadroOpcion({
                         {textoTipo == 'backend'
                             ?
                             <h2 className='m-l'>
-                                {textoTipo.toUpperCase()} <span style={aperturas}>&gt;</span>
+                                {textoTipo.toUpperCase()}
+                                <span style={aperturas}>
+                                    &gt;</span>
                             </h2>
                             :
                             <h2 className='m-r'>

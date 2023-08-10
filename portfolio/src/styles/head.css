@@ -17,6 +17,11 @@
     user-select: none;
 }
 
+.head-text:hover {
+    cursor: pointer;
+    color: rgba(255, 204, 102, 1);
+}
+
 .head-text span {
     font-weight: normal;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;

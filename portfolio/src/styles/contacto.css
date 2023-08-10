@@ -4,6 +4,8 @@
     color: whitesmoke;
     display: flex;
     align-items: center;
+    font-family: var(--font_0);
+    font-size: 14px;
 }
 
 .contacto-izquierda {

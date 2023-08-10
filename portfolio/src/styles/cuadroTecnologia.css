@@ -11,6 +11,7 @@
 
 .cuadro-certificado-box:hover {
     cursor: pointer;
+    color: orange;
 }
 
 .cuadro-tecnologia-encuadre {
@@ -49,14 +50,14 @@
 .cuadro-tecnologia-texto {
     margin-top: 2px;
     font-size: 12px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--font_0);
 }
 
 .cuadro-certificado-texto {
     margin-top: 2px;
     font-size: 12px;
     font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--font_0);
 }
 
 .cuadro-descarga {

@@ -10,6 +10,15 @@
     max-width: 56rem;
     margin: 0 auto;
     box-shadow: 0 0 2px black;
+    /* user-select: none; */
+}
+
+.proyectos-box.right {
+    animation: fadeIntoFR 0.5s ease forwards;
+}
+
+.proyectos-box.left {
+    animation: fadeIntoFL 0.5s ease forwards;
 }
 
 .proyectos-container {

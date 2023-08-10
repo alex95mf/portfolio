@@ -8,7 +8,7 @@
 .proyecto-titulo {
     text-align: center;
     margin-bottom: 1rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--font_0);
 }
 
 .proyecto-contenido {
@@ -27,7 +27,7 @@
     width: 26rem;
     height: 20rem;
     margin-bottom: 0.3rem;
-    border-radius: 0.2rem;
+    border-radius: 0.6rem;
     box-shadow: 0px 0px 2px black;
 }
 
@@ -50,12 +50,13 @@
 .proyecto-descripcion {
     text-align: justify;
     font-size: medium;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: var(--font_0);
 }
 
 .proyecto-tecnologias {
     margin-top: 2rem;
     font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .proyecto-tecnologias-texto {
