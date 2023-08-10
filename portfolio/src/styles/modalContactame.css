@@ -7,6 +7,8 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5);
     display: flex;
+    gap: 0rem;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     opacity: 0;
@@ -15,6 +17,14 @@
     /* Evitar clics en el modal oculto */
     transition: opacity 0.3s;
     /* Transición suave de la propiedad opacity */
+}
+
+.modal-spinner {
+    height: 0;
+}
+
+.modal.loading {
+    /* opacity: 0.8; */
 }
 
 .modal.abierto {
@@ -31,14 +41,15 @@
     border-radius: 1.2rem;
     transition: opacity 0.3s, transform 0.3s;
     transform: translateY(-50%);
+    height: auto;
 }
 
 .modal-content.abierto {
-    /* background-color: var(--fondo-claro);
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-    border-radius: 1.2rem; */
     transform: translateY(0%);
+}
+
+.modal-content.abierto.loading {
+    /* opacity: 0.8; */
 }
 
 .modal-header {

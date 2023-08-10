@@ -1,6 +1,9 @@
 import React, { useState, useRef } from 'react'
 import '../styles/modalContactame.css'
 import MensajeNotificacion from './MensajeNotificacion';
+import { Audio, Bars, Circles, ColorRing, MutatingDots, Oval, ProgressBar, Puff, Radio, RevolvingDot, Rings, RotatingLines, RotatingSquare, RotatingTriangles, TailSpin, ThreeCircles, ThreeDots, Vortex, Watch } from 'react-loader-spinner';
+// import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css'; // Importa los estilos CSS
+
 
 function ModalContactame({ onClose, showModal, configurarMensajeNotificacion, mensajeNotificacion }) {
     const nombre = "*Nombre";
@@ -19,6 +22,7 @@ function ModalContactame({ onClose, showModal, configurarMensajeNotificacion, me
     const [inputEmail, setInputEmail] = useState('');
     const [inputTelefono, setInputTelefono] = useState('');
     const [inputMensaje, setInputMensaje] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
 
     const inputNombreRef = useRef(null);
     const inputEmpresaRef = useRef(null);
@@ -110,6 +114,7 @@ function ModalContactame({ onClose, showModal, configurarMensajeNotificacion, me
             formulario.telefono = inputTelefono;
             formulario.mensaje = inputMensaje;
             try {
+                setIsLoading(true)
                 const respuesta = await fetch(urlBackendDev + urlApi, {
                     method: 'POST',
                     headers: {
@@ -118,6 +123,7 @@ function ModalContactame({ onClose, showModal, configurarMensajeNotificacion, me
                     body: JSON.stringify(formulario)
                 })
                 if (respuesta.ok) {
+                    setIsLoading(false)
                     configurarMensajeNotificacion('Formulario enviado exitosamente');
                     setTimeout(() => {
                         onClose();
@@ -126,9 +132,11 @@ function ModalContactame({ onClose, showModal, configurarMensajeNotificacion, me
                         limpiarModal();
                     }, 500)
                 } else {
+                    setIsLoading(false)
                     configurarMensajeNotificacion('Error al enviar el formulario');
                 }
             } catch (error) {
+                setIsLoading(false)
                 configurarMensajeNotificacion(`Error en la solicitud: ${error}`);
             }
 
@@ -149,8 +157,8 @@ function ModalContactame({ onClose, showModal, configurarMensajeNotificacion, me
 
     return (
         <>
-            <div className={`modal ${showModal ? 'abierto' : ''}`} onClick={handleModalClickAfuera}>
-                <div className={`modal-content ${showModal ? 'abierto' : ''}`}>
+            <div className={`modal ${showModal ? 'abierto' : ''} ${isLoading ? 'loading' : ''}`} onClick={handleModalClickAfuera}>
+                <div className={`modal-content ${showModal ? 'abierto' : ''} ${isLoading ? 'loading' : ''}`}>
                     <div className='modal-header'>
                         <h3>{tituloModal}</h3><span className="boton-cierre" onClick={onClose} >
                             &times;
@@ -185,6 +193,15 @@ function ModalContactame({ onClose, showModal, configurarMensajeNotificacion, me
                         <button className='modal-boton modal-boton-cerrar' onClick={onClose}>Cerrar</button>
                     </div>
                 </div>
+                {isLoading && <ThreeDots
+                    height="80"
+                    width="80"
+                    radius="9"
+                    color='white'
+                    ariaLabel='three-dots-loading'
+                    wrapperStyle={{}}
+                    wrapperClass='modal-spinner'
+                />}
             </div >
         </>
     )
