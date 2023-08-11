@@ -11,14 +11,17 @@
     margin: 0 auto;
     box-shadow: 0 0 2px black;
     /* user-select: none; */
+    overflow: hidden;
 }
 
 .proyectos-box.right {
     animation: fadeIntoFR 0.5s ease forwards;
+    overflow: hidden;
 }
 
 .proyectos-box.left {
     animation: fadeIntoFL 0.5s ease forwards;
+    overflow: hidden;
 }
 
 .proyectos-container {
