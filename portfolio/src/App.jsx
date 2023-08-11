@@ -12,8 +12,98 @@ import SobreMi from './components/SobreMi';
 import Contacto from './components/Contacto';
 import './App.css';
 import MensajeNotificacion from './components/MensajeNotificacion';
+import { useTranslation, Trans } from 'react-i18next';
+import LanguageSwitcher from './components/LanguageSwitcher';
 
 function App() {
+  const { t, i18n } = useTranslation();
+
+  const display = {
+    navigation: {
+      inicio: t('navigation.home'),
+      habilidades: t('navigation.skills'),
+      proyectos: t('navigation.projects')
+    },
+    header: {
+      name: t('header.name')
+    },
+    pages: {
+      home: {
+        frontendText: t('pages.home.frontendText'),
+        backendText: t('pages.home.backendText')
+      },
+      skills: {
+        downloadCVText: t('pages.skills.downloadCVText'),
+        summary: t('pages.skills.summary'),
+        databasestitle: t('pages.skills.databasestitle'),
+        yearText: t('pages.skills.yearText'),
+        certifications: {
+          title: t('pages.skills.certifications.title'),
+          aws: t('pages.skills.certifications.aws'),
+          csharp: t('pages.skills.certifications.csharp'),
+          aspnetmvc: t('pages.skills.certifications.aspnetmvc'),
+          aspnetwebapi: t('pages.skills.certifications.aspnetwebapi'),
+          sqlserver: t('pages.skills.certifications.sqlserver'),
+          mysql: t('pages.skills.certifications.mysql'),
+          scrum: t('pages.skills.certifications.scrum'),
+        }
+      },
+      projects: {
+        projectsInfo: {
+          veterinario: {
+            title: t('pages.projects.projectsInfo.veterinario.title'),
+            description: t('pages.projects.projectsInfo.veterinario.description')
+          },
+          budget: {
+            title: t('pages.projects.projectsInfo.budget.title'),
+            description: t('pages.projects.projectsInfo.budget.description')
+          },
+          cripto: {
+            title: t('pages.projects.projectsInfo.cripto.title'),
+            description: t('pages.projects.projectsInfo.cripto.description')
+          },
+          calculator: {
+            title: t('pages.projects.projectsInfo.calculator.title'),
+            description: t('pages.projects.projectsInfo.calculator.description')
+          },
+          festival: {
+            title: t('pages.projects.projectsInfo.festival.title'),
+            description: t('pages.projects.projectsInfo.festival.description')
+          },
+          task: {
+            title: t('pages.projects.projectsInfo.task.title'),
+            description: t('pages.projects.projectsInfo.task.description')
+          },
+          store: {
+            title: t('pages.projects.projectsInfo.store.title'),
+            description: t('pages.projects.projectsInfo.store.description')
+          },
+          blog: {
+            title: t('pages.projects.projectsInfo.blog.title'),
+            description: t('pages.projects.projectsInfo.blog.description')
+          }
+        },
+        linkText: t('pages.projects.linkText'),
+        tecnologies: t('pages.projects.tecnologies')
+      }
+    },
+    contact: {
+      title: t('contact.title'),
+      phone: {
+        title: t('contact.phone.title'),
+        value: t('contact.phone.value')
+      },
+      email: {
+        title: t('contact.email.title'),
+        value: t('contact.email.value')
+      }
+    },
+    footer: {
+      text: t('footer.text'),
+      name: t('footer.name')
+    }
+  };
+
   const pagina = {
     inicio: 'Inicio',
     habilidades: 'Habilidades',
@@ -89,12 +179,14 @@ function App() {
   return (
     <>
       <div className='main-box'>
+        <LanguageSwitcher />
         <Navigation
           pagina={pagina}
+          displayPagina={display.navigation}
           paginaActual={paginaActual}
           handlePaginaClick={handlePaginaClick}
         />
-        <Head />
+        <Head name={display.header.name} />
 
         <div className='container-box' ref={nodeRef}>
           <Transition
@@ -118,14 +210,17 @@ function App() {
                 {paginaActual === pagina.inicio &&
                   <Inicio
                     appearingDirection={direction}
+                    display={display.pages.home}
                   />}
                 {paginaActual === pagina.habilidades &&
                   <Habilidades
                     appearingDirection={direction}
+                    display={display.pages.skills}
                   />}
                 {paginaActual === pagina.proyectos &&
                   <Proyectos
                     appearingDirection={direction}
+                    display={display.pages.projects}
                   />}
                 {paginaActual === pagina.sobreMi &&
                   <SobreMi />}
@@ -147,8 +242,9 @@ function App() {
           showModal={showModal}
           configurarMensajeNotificacion={configurarMensajeNotificacion}
           mensajeNotificacion={mensajeNotificacion}
+          display={display.contact}
         />
-        <Footer />
+        <Footer display={display.footer} />
       </div>
     </>
   )

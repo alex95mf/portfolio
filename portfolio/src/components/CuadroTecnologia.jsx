@@ -1,54 +1,63 @@
 import React from 'react'
 import "../styles/cuadroTecnologia.css";
-import pdfcsharp from '../assets/documents/csharpENG.pdf';
-import pdfaspnetmvc from '../assets/documents/aspnetmvcENG.pdf';
-import pdfaspnetwebapi from '../assets/documents/aspnetwebapiENG.pdf';
-import pdfsqlserver from '../assets/documents/sqlserverENG.pdf';
+import pdfcsharpENG from '../assets/documents/csharpENG.pdf';
+import pdfcsharpESP from '../assets/documents/csharpESP.pdf';
+import pdfaspnetmvcENG from '../assets/documents/aspnetmvcENG.pdf';
+import pdfaspnetmvcESP from '../assets/documents/aspnetmvcESP.pdf';
+import pdfaspnetwebapiENG from '../assets/documents/aspnetwebapiENG.pdf';
+import pdfaspnetwebapiESP from '../assets/documents/aspnetwebapiESP.pdf';
+import pdfsqlserverENG from '../assets/documents/sqlserverENG.pdf';
+import pdfsqlserverESP from '../assets/documents/sqlserverESP.pdf';
 import pdfawsfundamentals from '../assets/documents/awsfundamentals.pdf';
 import pdfrelationaldatabase from '../assets/documents/relationaldatabase.pdf';
 import pdfscrum from '../assets/documents/scrum.pdf';
 import iconoDescargarCV from '../assets/icons/descargaB.webp'
 
-function CuadroTecnologia({ icono, alt, cantidad, esCertificado, nombre }) {
+function CuadroTecnologia({ icono, alt, cantidad, esCertificado, nombre, yearText, display }) {
     let clase = "tecnologia";
     if (esCertificado) {
         clase = "certificado";
     }
 
+    let idioma = 'es'
+    if (yearText == 'year') {
+        idioma = 'en'
+    }
+
     const certificados = [
         {
             nombre: "csharp",
-            nombreCompleto: "C# Professional .NET",
-            certificado: pdfcsharp
+            nombreCompleto: display.certifications.csharp,
+            certificado: idioma == 'es' ? pdfcsharpESP : pdfcsharpENG
         },
         {
             nombre: "aspnetmvc",
-            nombreCompleto: "ASP.NET MVC",
-            certificado: pdfaspnetmvc
+            nombreCompleto: display.certifications.aspnetmvc,
+            certificado: idioma == 'es' ? pdfaspnetmvcESP : pdfaspnetmvcENG
         },
         {
             nombre: "aspnetwebapi",
-            nombreCompleto: "ASP.NET Web API",
-            certificado: pdfaspnetwebapi
+            nombreCompleto: display.certifications.aspnetwebapi,
+            certificado: idioma == 'es' ? pdfaspnetwebapiESP : pdfaspnetwebapiENG
         },
         {
             nombre: "awsfundamentals",
-            nombreCompleto: "AWS Cloud",
+            nombreCompleto: display.certifications.aws,
             certificado: pdfawsfundamentals
         },
         {
             nombre: "relationaldatabase",
-            nombreCompleto: "Relational Database Adminsitrator",
+            nombreCompleto: display.certifications.mysql,
             certificado: pdfrelationaldatabase
         },
         {
             nombre: "sqlserver",
-            nombreCompleto: "SQL Server Master",
-            certificado: pdfsqlserver
+            nombreCompleto: display.certifications.sqlserver,
+            certificado: idioma == 'es' ? pdfsqlserverESP : pdfsqlserverENG
         },
         {
             nombre: "scrum",
-            nombreCompleto: "Scrum Developer & SDPC",
+            nombreCompleto: display.certifications.scrum,
             certificado: pdfscrum
         }
     ];
@@ -73,7 +82,7 @@ function CuadroTecnologia({ icono, alt, cantidad, esCertificado, nombre }) {
                     {esCertificado && <img className='cuadro-descarga' src={iconoDescargarCV} alt='Icono descargar certificado' />}
                 </div>
                 <div className={`cuadro-${clase}-texto`}>
-                    <p>{`${esCertificado ? alt : cantidad > 1 ? cantidad + ' años' : cantidad + ' año'}`}</p>
+                    <p>{`${esCertificado ? alt : cantidad > 1 ? cantidad + ' ' + yearText + 's' : cantidad + ' ' + yearText}`}</p>
                 </div>
             </div>
         </div>

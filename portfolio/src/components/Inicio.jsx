@@ -4,7 +4,7 @@ import BotonContactame from './BotonContactame';
 import ModalContactame from './ModalContactame';
 import CuadroOpcion from './CuadroOpcion';
 
-function Inicio({ appearingDirection }) {
+function Inicio({ appearingDirection, display }) {
     // Variables de cuadros de opciones (Frontend y Backend)
     const [cuadroIzquierdo, setCuadroIzquierdo] = useState(false);
     const [cuadroDerecho, setCuadroDerecho] = useState(false);
@@ -40,9 +40,7 @@ function Inicio({ appearingDirection }) {
                         resaltarCuadro={resaltarCuadroIzquierdo}
                         atenuarCuadro={atenuarCuadroIzquierdo}
                         textoTipo={`frontend`}
-                        descripcion={` Desarrollo de proyectos de frontend con base en habilidades sólidas
-                        para la creación de interfaces de usuario atractivas y funcionales,
-                        con un enfoque centrado en el usuario.`}>
+                        descripcion={display.frontendText}>
                     </CuadroOpcion>
                     <CuadroOpcion
                         cuadroSeleccionado={cuadroDerecho}
@@ -50,8 +48,7 @@ function Inicio({ appearingDirection }) {
                         resaltarCuadro={resaltarCuadroDerecho}
                         atenuarCuadro={atenuarCuadroDerecho}
                         textoTipo={`backend`}
-                        descripcion={`Creación de software de backend robustos y eficientes que brindan soluciones
-                        confiables, y garantizan el funcionamiento óptimo y seguro del sistema.`}>
+                        descripcion={display.backendText}>
                     </CuadroOpcion>
                 </div>
             </div >

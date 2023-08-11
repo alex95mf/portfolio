@@ -1,12 +1,12 @@
 import React from 'react';
 import '../styles/footer.css'
 
-function Footer() {
+function Footer({ display }) {
     return (
         <>
             <div className='footer-box'>
                 <h1 className='footer-text'>
-                    Todos los derechos reservados - Alexander Martínez
+                    {display.text} - {display.name}
                 </h1>
             </div>
         </>

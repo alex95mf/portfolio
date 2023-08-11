@@ -1,0 +1,86 @@
+{
+    "navigation": {
+        "home": "Home",
+        "skills": "Skills",
+        "projects": "Projects"
+    },
+    "header": {
+        "name": "Alexander Martinez"
+    },
+    "pages": {
+        "home": {
+            "frontendText": "Development of frontend projects based on strong skills for creating appealing and functional user interfaces, with a user-centered approach.",
+            "backendText": "Creation of robust and efficient backend software that provides reliable solutions, ensuring optimal and secure system operation."
+        },
+        "skills": {
+            "resumeTextname": "Resume Alexander Martinez",
+            "downloadCVText": "Résume",
+            "summary": "Fullstack web developer with over 3 years of experience in web-based software development. I have worked across governmental, pharmaceutical, and transportation industries, crafting software solutions both on the frontend and backend, in addition to managing databases for various business domains. I possess a strong English proficiency and have worked in the United States for more than 16 months, complemented by completing courses and obtaining additional professional certifications from various institutions.",
+            "databasestitle": "Databases",
+            "yearText": "year",
+            "certifications": {
+                "title": "Certifications",
+                "aws": "AWS Cloud",
+                "csharp": "C# Professional .NET",
+                "aspnetmvc": "ASP.NET Core MVC",
+                "aspnetwebapi": "ASP.NET Core Web API",
+                "sqlserver": "SQL Server Professional",
+                "mysql": "Relational Database Administrator",
+                "scrum": "SCRUM Developer"
+            }
+        },
+        "projects": {
+            "projectsInfo": {
+                "veterinario": {
+                    "title": "Online PetCare",
+                    "description": "Web application for online patient tracking. It encompasses the visualization, creation, modification, and deletion of records containing information about each patient. All data is stored in the browser's local storage to preserve information."
+                },
+                "budget": {
+                    "title": "Budget MG",
+                    "description": "Web application to manage an initially set budget. It enables the creation of expenses, which are displayed on a graph in relation to the budget. It includes a filtering option for expense visualization."
+                },
+                "cripto": {
+                    "title": "Cripto Search",
+                    "description": "Web application for real-time quoting of popular currencies and cryptocurrencies, displaying their respective equivalencies."
+                },
+                "calculator": {
+                    "title": "Methodic Calculator",
+                    "description": "Online calculator that enables performing all basic mathematical operations. It features a responsive and dynamic display."
+                },
+                "festival": {
+                    "title": "Rocked Music Festival",
+                    "description": "Web event platform: Rock Music Festival. It encompasses Line Up information, a gallery, and a ticket section."
+                },
+                "task": {
+                    "title": "Task Planner",
+                    "description": "Web application for task management. It allows users to view, add, modify, and delete tasks. Users can also mark tasks as completed or not completed."
+                },
+                "store": {
+                    "title": "Cool Store",
+                    "description": "E-Commerce platform for a clothing store. Enables product purchasing and visualization."
+                },
+                "blog": {
+                    "title": "Blog enCafe",
+                    "description": "Website for coffee information and consultation. The blog features various entries about specific information, along with a section for courses and contact details."
+                }
+            },
+            "linkText": "Go to Website",
+            "tecnologies": "Tecnologies"
+        }
+    },
+    "contact": {
+        "title": "Contact information",
+        "phone": {
+            "title": "Phone",
+            "value": "+593 993414364"
+        },
+        "email": {
+            "title": "E-mail",
+            "value": "alex95mf@gmail.com"
+        }
+    },
+    "footer": {
+        "text": "All rights reserved",
+        "name": "Alexander Martinez"
+    }
+}

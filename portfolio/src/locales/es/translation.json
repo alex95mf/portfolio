@@ -1,0 +1,86 @@
+{
+    "navigation": {
+        "home": "Inicio",
+        "skills": "Habilidades",
+        "projects": "Proyectos"
+    },
+    "header": {
+        "name": "Alexander Martínez"
+    },
+    "pages": {
+        "home": {
+            "frontendText": "Desarrollo de proyectos de frontend con base en habilidades sólidas para la creación de interfaces de usuario atractivas y funcionales, con un enfoque centrado en el usuario.",
+            "backendText": "Creación de software de backend robustos y eficientes que brindan soluciones confiables, y garantizan el funcionamiento óptimo y seguro del sistema."
+        },
+        "skills": {
+            "resumeTextname": "CV Alexander Martinez",
+            "downloadCVText": "Curriculum",
+            "summary": "Desarrollador web Fullstack con más de 3 años de experiencia en el desarrollo de software basado en web. He trabajado en la industria gubernamental, farmacéutica y de transporte, desarrollando soluciones de software tanto en el frontend como en el backend, además de gestionar bases de datos para diferentes áreas de la empresa. Tengo un sólido nivel de inglés y experiencia laboral en Estados Unidos durante más de 16 meses, además de haber realizado cursos y obtenido certificaciones profesionales adicionales en diversas instituciones.",
+            "databasestitle": "Bases de datos",
+            "yearText": "año",
+            "certifications": {
+                "title": "Certificaciones",
+                "aws": "AWS Cloud",
+                "csharp": "C# Profesional .NET",
+                "aspnetmvc": "ASP.NET Core MVC",
+                "aspnetwebapi": "ASP.NET Core Web API",
+                "sqlserver": "SQL Server Profesional",
+                "mysql": "Administrador de bases de datos relacionales",
+                "scrum": "Metodología SCRUM"
+            }
+        },
+        "projects": {
+            "projectsInfo": {
+                "veterinario": {
+                    "title": "Veterinario Online",
+                    "description": "Aplicación web para el seguimiento online de pacientes. Contempla la visualización, creación, modificación y eliminación de registros con información de cada paciente. Toda la información se almacena en el almacenamiento local del navegador para preservar datos."
+                },
+                "budget": {
+                    "title": "Manejador de Presupuesto",
+                    "description": "Aplicación web para manejar un presupuesto establecido inicialmente. Permite crear gastos que se visualizarán en un gráfico en relación con el presupuesto. Contempla opción de filtro para la visualización de gastos."
+                },
+                "cripto": {
+                    "title": "Cripto-Búqueda",
+                    "description": "Aplicación web para la cotización de información en tiempo real de monedas y criptomonedas más populares, con su respectiva equivalencia."
+                },
+                "calculator": {
+                    "title": "Calculadora Metódica",
+                    "description": "Calculadora online que permite realizar todas las operaciones matemáticas básicas. Consta de pantalla responsiva y dinámica."
+                },
+                "festival": {
+                    "title": "Festival de Música",
+                    "description": "Plataforma web de evento: Festival de Música de Rock. Contempla información de Line Up, galería y sección de tickets."
+                },
+                "task": {
+                    "title": "Planificador de Tareas",
+                    "description": "Aplicación web para la gestión de tareas. Permite visualizar, agregar, modificar y eliminar tareas. Además de marcar tareas como completadas o no completadas."
+                },
+                "store": {
+                    "title": "Tienda Online",
+                    "description": "Plataforma E-Commerce para tienda de ropa. Permite visualización y compra de productos."
+                },
+                "blog": {
+                    "title": "Blog enCafe",
+                    "description": "Sitio web para consulta de información sobre café. El blog posee diferentes entradas sobre información específica, además de contar con sección de cursos y contacto."
+                }
+            },
+            "linkText": "Ir al sitio web",
+            "tecnologies": "Tecnologías"
+        }
+    },
+    "contact": {
+        "title": "Información de contacto",
+        "phone": {
+            "title": "Teléfono",
+            "value": "+593 993414364"
+        },
+        "email": {
+            "title": "Correo electrónico",
+            "value": "alex95mf@gmail.com"
+        }
+    },
+    "footer": {
+        "text": "Todos los derechos reservados",
+        "name": "Alexander Martínez"
+    }
+}

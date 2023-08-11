@@ -10,7 +10,7 @@ import proyectoTaskApp from '../assets/images/taskapp.webp'
 import proyectoCoolStore from '../assets/images/coolstore.webp'
 import proyectoBlogEnCafe from '../assets/images/blogencafe.webp'
 
-function Proyectos({ appearingDirection }) {
+function Proyectos({ appearingDirection, display }) {
     const react = 'React';
     const tailwindCss = 'TailwindCSS'
     const html = 'Html'
@@ -23,78 +23,69 @@ function Proyectos({ appearingDirection }) {
     const sass = 'SASS'
     const scss = 'SCSS'
 
+    const proyectosInfo = display.projectsInfo
+
     const proyectos = [
         {
             nombre: 'seguimientoVeterinaria',
-            nombreCompleto: 'Veterinario Online',
-            descripcion: `Aplicación web para el seguimiento online de pacientes. Contempla la 
-            visualización, creación, modificación y eliminación de registros con información de cada 
-            paciente. Toda la información se almacena en el almacenamiento local del navegador para 
-            preservar datos.`,
+            nombreCompleto: proyectosInfo.veterinario.title,
+            descripcion: proyectosInfo.veterinario.description,
             link: 'https://veterinario-online.netlify.app/',
             imagen: proyectoVeterinaria,
             tecnologias: [react, js, tailwindCss, vite]
         },
         {
             nombre: 'budgetMg',
-            nombreCompleto: 'Budget MG',
-            descripcion: `Aplicación web para manejar un presupuesto establecido inicialmente. Permite
-            crear gastos que se visualizarán en un gráfico en relación con el presupuesto. Contempla
-            opción de filtro para la visualización de gastos.`,
+            nombreCompleto: proyectosInfo.budget.title,
+            descripcion: proyectosInfo.budget.description,
             link: 'https://presupuesto-management.netlify.app/',
             imagen: proyectobudgetMG,
             tecnologias: [react, js, css, vite, styledComponents]
         },
         {
             nombre: 'criptoSearch',
-            nombreCompleto: 'Cripto Search',
-            descripcion: `Aplicación web para la cotización de información en tiempo real de monedas 
-            y criptomonedas más populares, con su respectiva equivalencia.`,
+            nombreCompleto: proyectosInfo.cripto.title,
+            descripcion: proyectosInfo.cripto.description,
             link: 'https://cripto-search.netlify.app/',
             imagen: proyectoCriptoSearch,
             tecnologias: [react, js, css, vite, cryptowatchApi]
         },
         {
             nombre: 'methodicCalculator',
-            nombreCompleto: 'Methodic Calculator',
-            descripcion: `Calculadora online que permite realizar todas las operaciones matemáticas
-            básicas. Consta de pantalla responsiva y dinámica.`,
+            nombreCompleto: proyectosInfo.calculator.title,
+            descripcion: proyectosInfo.calculator.description,
             link: 'https://methodic-calculator.netlify.app/',
             imagen: proyectoMethodicCalculator,
             tecnologias: [react, ts, html, css]
         },
         {
             nombre: 'rockedMusicFestival',
-            nombreCompleto: 'Rocked Music Festival',
-            descripcion: `Plataforma web de evento: Festival de Música de Rock. Contempla información 
-            de Line Up, galería y sección de tickets.`,
+            nombreCompleto: proyectosInfo.festival.title,
+            descripcion: proyectosInfo.festival.description,
             link: 'https://rockedmusicfestival.netlify.app/',
             imagen: proyectoRockedMusicFestival,
             tecnologias: [js, html, sass, scss]
         },
         {
             nombre: 'taskApp',
-            nombreCompleto: 'Task App',
-            descripcion: `Aplicación web para la gestión de tareas. Permite visualizar, agregar, 
-            modificar y eliminar tareas. Además de marcar tareas como completadas o no completadas.`,
+            nombreCompleto: proyectosInfo.task.title,
+            descripcion: proyectosInfo.task.description,
             link: 'https://ramftaskapp.netlify.app/',
             imagen: proyectoTaskApp,
             tecnologias: [react, js, html, css]
         },
         {
             nombre: 'coolStore',
-            nombreCompleto: 'Cool Store',
-            descripcion: `Plataforma E-Commerce para tienda de ropa. Permite visualización y compra 
-            de productos.`,
+            nombreCompleto: proyectosInfo.store.title,
+            descripcion: proyectosInfo.store.description,
             link: 'https://coolstore.netlify.app/',
             imagen: proyectoCoolStore,
             tecnologias: [html, css]
         },
         {
             nombre: 'blogEnCafe',
-            nombreCompleto: 'Blog enCafe',
-            descripcion: `Sitio web para consulta de información sobre café. El blog posee diferentes 
-            entradas sobre información específica, además de contar con sección de cursos y contacto.`,
+            nombreCompleto: proyectosInfo.blog.title,
+            descripcion: proyectosInfo.blog.description,
             link: 'https://blogencafe.netlify.app/',
             imagen: proyectoBlogEnCafe,
             tecnologias: [html, css]
@@ -116,6 +107,7 @@ function Proyectos({ appearingDirection }) {
                         imagen={proyecto.imagen}
                         link={proyecto.link}
                         tecnologias={proyecto.tecnologias}
+                        display={display}
                     />
                 )
             }))

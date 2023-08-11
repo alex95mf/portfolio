@@ -1,7 +1,7 @@
 import React from 'react'
 import '../styles/cuadroProyecto.css'
 
-function CuadroProyecto({ nombre, descripcion, imagen, link, tecnologias, index }) {
+function CuadroProyecto({ nombre, descripcion, imagen, link, tecnologias, index, display }) {
     const escribirTecnologias = () => {
         const resultado = []
         let textoTecnologias = ''
@@ -29,11 +29,11 @@ function CuadroProyecto({ nombre, descripcion, imagen, link, tecnologias, index 
             <div className='proyecto-contenido'>
                 <a className='proyecto-link' href={link} target='_blank' rel='noopener noreferrer'>
                     <img className='proyecto-imagen' src={imagen} alt={nombre} loading='lazy' />
-                    <p className='proyecto-link-texto' title={link}>Ir al sitio web</p>
+                    <p className='proyecto-link-texto' title={link}>{display.linkText}</p>
                 </a>
                 <div className='proyecto-texto'>
                     <p className='proyecto-descripcion'>{descripcion}</p>
-                    <p className='proyecto-tecnologias'>Tecnologías: {escribirTecnologias()}</p>
+                    <p className='proyecto-tecnologias'>{display.tecnologies}: {escribirTecnologias()}</p>
                 </div>
             </div>
         </div>

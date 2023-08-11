@@ -24,35 +24,19 @@ import pdfCVESP from '../assets/documents/cvesp.pdf';
 import pdfCVENG from '../assets/documents/cveng.pdf';
 import iconoDescargarCV from '../assets/icons/descargaA.webp'
 
-function Habilidades({ appearingDirection }) {
+function Habilidades({ appearingDirection, display }) {
     const titulos = {
         frontend: "frontend",
         backend: "backend",
-        database: "bases de datos",
-        certifications: "certificaciones"
+        database: display.databasestitle,
+        certifications: display.certifications.title
     }
 
-    const nombreCVESP = 'Curriculum Vitae Alexander Martinez'
+    const nombreCV = display.resumeTextname
 
-    const textoDescargarCV = 'Curriculum'
+    const textoDescargarCV = display.downloadCVText
 
-    const textoSobreMi = `Desarrollador web Fullstack con más de
-    3 años de experiencia en el
-    desarrollo de software basado en
-    web. He trabajado en la industria
-    gubernamental, farmacéutica y de
-    transporte, desarrollando soluciones
-    de software tanto en el frontend
-    como en el backend, además de
-    gestionar bases de datos para
-    diferentes áreas de la empresa.
-    Tengo un sólido nivel de inglés y
-    experiencia laboral en Estados
-    Unidos durante más de 16 meses,
-    además de haber realizado cursos y
-    obtenido certificaciones
-    profesionales adicionales en
-    diversas instituciones.`
+    const textoSobreMi = display.summary
 
     const tecnologias = {
         frontend: [
@@ -122,11 +106,6 @@ function Habilidades({ appearingDirection }) {
                 alt: "NodeJS",
                 cantidad: 2
             },
-            // {
-            //     icono: apirest,
-            //     alt: "API Rest | Infraestructura de microservicios",
-            //     cantidad: 2
-            // },
             {
                 icono: java,
                 alt: "Java",
@@ -152,49 +131,49 @@ function Habilidades({ appearingDirection }) {
             {
                 icono: aws,
                 nombre: "awsfundamentals",
-                alt: "AWS Cloud",
+                alt: display.certifications.aws,
                 cantidad: 2023,
                 esCertificado: true
             },
             {
                 icono: csharp,
                 nombre: "csharp",
-                alt: "C# Profesional .NET",
+                alt: display.certifications.csharp,
                 cantidad: 2021,
                 esCertificado: true
             },
             {
                 icono: aspnetmvc,
                 nombre: "aspnetmvc",
-                alt: "ASP.NET Core MVC",
+                alt: display.certifications.aspnetmvc,
                 cantidad: 2022,
                 esCertificado: true
             },
             {
                 icono: aspnetCore,
                 nombre: "aspnetwebapi",
-                alt: "ASP.NET Core Web API",
+                alt: display.certifications.aspnetwebapi,
                 cantidad: 2022,
                 esCertificado: true
             },
             {
                 icono: sqlserver,
                 nombre: "sqlserver",
-                alt: "SQL Server Profesional",
+                alt: display.certifications.sqlserver,
                 cantidad: 2022,
                 esCertificado: true
             },
             {
                 icono: mysql,
                 nombre: "relationaldatabase",
-                alt: "Relational Database Administrator",
+                alt: display.certifications.mysql,
                 cantidad: 2021,
                 esCertificado: true
             },
             {
                 icono: scrum,
                 nombre: "scrum",
-                alt: "SCRUM Developer",
+                alt: display.certifications.scrum,
                 cantidad: 2022,
                 esCertificado: true
             }
@@ -218,6 +197,8 @@ function Habilidades({ appearingDirection }) {
                                 cantidad={tecnologia.cantidad}
                                 esCertificado={tecnologia.esCertificado}
                                 nombre={tecnologia.nombre}
+                                yearText={display.yearText}
+                                display={display}
                             />
                         )
                     })}
@@ -228,9 +209,17 @@ function Habilidades({ appearingDirection }) {
     }
 
     const descargarCV = () => {
+        let idioma = 'es'
+        if (display.yearText == 'year') {
+            idioma = 'en'
+        }
         const link = document.createElement('a');
-        link.href = pdfCVESP;
-        link.download = `${nombreCVESP}.pdf`;
+        if (idioma == 'es') {
+            link.href = pdfCVESP;
+        } else {
+            link.href = pdfCVENG;
+        }
+        link.download = `${nombreCV}.pdf`;
         link.target = '_blank';
         link.click();
     }

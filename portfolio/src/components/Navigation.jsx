@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import '../styles/navigation.css'
+import LanguageSwitcher from './LanguageSwitcher';
 
-function Navigation({ pagina, paginaActual, handlePaginaClick }) {
+function Navigation({ pagina, paginaActual, handlePaginaClick, displayPagina }) {
     return (
         <>
             <div className='navigation-box'>
@@ -15,12 +16,13 @@ function Navigation({ pagina, paginaActual, handlePaginaClick }) {
                                     onClick={() => handlePaginaClick(nombrePagina)}
                                     href='#'
                                 >
-                                    {nombrePagina}
+                                    {displayPagina[nombrePagina.toLowerCase()]}
                                 </a>
                             </li>
                         ))}
                     </ul>
                 </nav>
+                {/* <LanguageSwitcher /> */}
             </div>
         </>
     );

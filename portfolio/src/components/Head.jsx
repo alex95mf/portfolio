@@ -3,7 +3,7 @@ import '../styles/head.css'
 import pdfCVESP from '../assets/documents/cvesp.pdf';
 import pdfCVENG from '../assets/documents/cveng.pdf';
 
-function Head() {
+function Head({ name }) {
     const nombreCVESP = 'Curriculum Vitae Alexander Martinez'
     const descargarCV = () => {
         const link = document.createElement('a');
@@ -16,7 +16,7 @@ function Head() {
         <>
             <div className='head-box'>
                 <h1 className='head-text' onClick={descargarCV}>
-                    <span>Alexander Martínez</span> Developer
+                    <span>{name}</span> Developer
                 </h1>
             </div>
         </>

@@ -4,7 +4,7 @@ import '../styles/modalContactame.css'
 import BotonContactame from './BotonContactame';
 import ModalContactame from './ModalContactame';
 
-function Contacto({ openModal, closeModal, showModal, configurarMensajeNotificacion, mensajeNotificacion }) {
+function Contacto({ openModal, closeModal, showModal, configurarMensajeNotificacion, mensajeNotificacion, display }) {
     const titulo = 'Información de contacto'
     const telefono = '+593 993414364'
     const telefonoLink = '+593993414364'
@@ -20,9 +20,9 @@ function Contacto({ openModal, closeModal, showModal, configurarMensajeNotificac
         <>
             <div className='contacto-box'>
                 <div className='contacto-izquierda'>
-                    <h2 className='contacto-titulo'>{titulo}</h2>
-                    <p><span>Teléfono: </span>{telefono}</p>
-                    <p><span>E-mail: </span>{email}</p>
+                    <h2 className='contacto-titulo'>{display.title}</h2>
+                    <p><span>{display.phone.title}: </span>{telefono}</p>
+                    <p><span>{display.email.title}: </span>{email}</p>
                 </div>
                 <div className='contacto-derecha'>
                     <div>
