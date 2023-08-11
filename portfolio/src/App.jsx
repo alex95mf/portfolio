@@ -34,6 +34,7 @@ function App() {
       },
       skills: {
         downloadCVText: t('pages.skills.downloadCVText'),
+        resumeTextname: t('pages.skills.resumeTextname'),
         summary: t('pages.skills.summary'),
         databasestitle: t('pages.skills.databasestitle'),
         yearText: t('pages.skills.yearText'),
