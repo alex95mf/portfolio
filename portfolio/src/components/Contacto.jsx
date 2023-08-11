@@ -26,13 +26,13 @@ function Contacto({ openModal, closeModal, showModal, configurarMensajeNotificac
                 </div>
                 <div className='contacto-derecha'>
                     <div>
-                        <BotonContactame onClick={openModal} />
+                        {/* <BotonContactame onClick={openModal} />
                         <ModalContactame
                             onClose={closeModal}
                             showModal={showModal}
                             configurarMensajeNotificacion={configurarMensajeNotificacion}
                             mensajeNotificacion={mensajeNotificacion}
-                        />
+                        /> */}
                     </div>
                     <div>
                         <BotonContactame esWpp={true} onClick={openWpp} />

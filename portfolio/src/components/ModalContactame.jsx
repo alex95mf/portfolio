@@ -138,6 +138,7 @@ function ModalContactame({ onClose, showModal, configurarMensajeNotificacion, me
             } catch (error) {
                 setIsLoading(false)
                 configurarMensajeNotificacion(`Error en la solicitud: ${error}`);
+                // configurarMensajeNotificacion(`Servicio no disponible`);
             }
 
         } else if (esValido == 1) {
