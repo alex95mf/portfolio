@@ -187,7 +187,7 @@ function App() {
           paginaActual={paginaActual}
           handlePaginaClick={handlePaginaClick}
         />
-        <Head name={display.header.name} />
+        <Head name={display.header.name} display={display} />
 
         <div className='container-box' ref={nodeRef}>
           <Transition
